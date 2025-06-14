@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8th Grade Algebra Readiness Standards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .overview {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .overview p {
+            font-size: 1.1rem;
+            color: #495057;
+            margin: 0;
+        }
+
+        .content {
+            padding: 0 40px 40px;
+        }
+
+        .quarter-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .quarter-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .quarter-number {
+            background: #667eea;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        .standard-group {
+            margin: 25px 0;
+        }
+
+        .standard-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .standard-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .standard-code {
+            display: inline-block;
+            background: #6c757d;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .standard-description {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .standard-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .standard-list li {
+            padding: 4px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .standard-list li:before {
+            content: "•";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .indicators-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .indicator-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .ready-card {
+            border-left: 4px solid #28a745;
+        }
+
+        .support-card {
+            border-left: 4px solid #dc3545;
+        }
+
+        .indicator-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .ready-card .indicator-title {
+            color: #28a745;
+        }
+
+        .support-card .indicator-title {
+            color: #dc3545;
+        }
+
+        .benchmarks-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .benchmarks-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .benchmark-item {
+            background: white;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+
+        .benchmark-quarter {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            background: #343a40;
+            color: #adb5bd;
+            padding: 30px 40px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .priority-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content, .overview {
+                padding: 20px;
+            }
+            
+            .quarter-section {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .indicators-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>8th Grade Algebra Readiness Standards</h1>
+            <p>Tennessee Mathematics Standards - Professional Reference Guide</p>
+        </div>
+
+        <div class="overview">
+            <p>Algebra Readiness (AR) Standards are essential prerequisites for Algebra I success. These standards are distributed across three quarters, with Quarter 4 focusing on statistics and comprehensive review.</p>
+        </div>
+
+        <div class="content">
+            <div class="quarter-section">
+                <div class="quarter-title">
+                    <div class="quarter-number">Q1</div>
+                    Foundation Building (August - October)
+                </div>
+                
+                <div class="standard-group">
+                    <div class="standard-title">Critical AR Standards</div>
+                    
+                    <div class="standard-content">
+                        <div class="standard-code">8.EE.A.1</div>
+                        <div class="standard-description">Integer Exponent Properties</div>
+                        <ul class="standard-list">
+                            <li>Master product rule: a^m × a^n = a^(m+n)</li>
+                            <li>Apply quotient rule: a^m ÷ a^n = a^(m-n)</li>
+                            <li>Understand power rule: (a^m)^n = a^(mn)</li>
+                            <li>Work with zero and negative exponents</li>
+                            <li>Simplify variable expressions with exponents</li>
+                        </ul>
+                    </div>
+
+                    <div class="standard-content">
+                        <div class="standard-code">8.EE.A.2</div>
+                        <div class="standard-description">Square and Cube Roots</div>
+                        <ul class="standard-list">
+                            <li>Recognize perfect squares (1-144) and cubes (1-125)</li>
+                            <li>Solve equations: x² = p and x³ = p</li>
+                            <li>Apply to real-world area and volume problems</li>
+                        </ul>
+                    </div>
+
+                    <div class="standard-content">
+                        <div class="standard-code">8.EE.C.7</div>
+                        <div class="standard-description">Linear Equations in One Variable</div>
+                        <ul class="standard-list">
+                            <li>Solve multi-step equations using distributive property</li>
+                            <li>Combine like terms effectively</li>
+                            <li>Identify solution types: one, none, or infinite solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quarter-section">
+                <div class="quarter-title">
+                    <div class="quarter-number">Q2</div>
+                    Linear Relationships (November - January)
+                </div>
+                
+                <div class="standard-group">
+                    <div class="standard-title">Critical AR Standards</div>
+                    
+                    <div class="standard-content">
+                        <div class="standard-code">8.F.B.4</div>
+                        <div class="standard-description">Linear Functions</div>
+                        <ul class="standard-list">
+                            <li>Calculate slope: m = (y₂ - y₁)/(x₂ - x₁)</li>
+                            <li>Identify y-intercepts and interpret in context</li>
+                            <li>Write functions in form f(x) = mx + b</li>
+                            <li>Connect slope and intercept to real-world situations</li>
+                        </ul>
+                    </div>
+
+                    <div class="standard-content">
+                        <div class="standard-code">8.EE.C.8</div>
+                        <div class="standard-description">Systems of Linear Equations</div>
+                        <ul class="standard-list">
+                            <li>Solve systems graphically</li>
+                            <li>Identify solution types: intersection, parallel, identical lines</li>
+                            <li>Interpret solutions in practical contexts</li>
+                        </ul>
+                    </div>
+
+                    <div class="standard-content">
+                        <div class="standard-code">8.F.A.1</div>
+                        <div class="standard-description">Function Concept</div>
+                        <ul class="standard-list">
+                            <li>Apply vertical line test for functions</li>
+                            <li>Use function notation: f(x) = expression</li>
+                            <li>Determine domain and range from various representations</li>
+                        </ul>
+                    </div>
+
+                    <div class="standard-content">
+                        <div class="standard-code">8.F.A.3</div>
+                        <div class="standard-description">Linear vs Non-Linear Functions</div>
+                        <ul class="standard-list">
+                            <li>Distinguish linear from non-linear functions</li>
+                            <li>Identify linear functions using constant rate of change</li>
+                            <li>Graph both linear and quadratic functions</li>
+                        </ul>
+                    </div>
+
+                    <div class="standard-content">
+                        <div class="standard-code">8.EE.C.9</div>
+                        <div class="standard-description">Linear Inequalities</div>
+                        <ul class="standard-list">
+                            <li>Solve one-variable inequalities</li>
+                            <li>Graph inequalities on number lines and coordinate planes</li>
+                            <li>Interpret solution sets in context</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quarter-section">
+                <div class="quarter-title">
+                    <div class="quarter-number">Q3</div>
+                    Geometry and Transformations (February - April)
+                </div>
+                
+                <div class="standard-group">
+                    <div class="standard-title">Critical AR Standards</div>
+                    
+                    <div class="standard-content">
+                        <div class="standard-code">8.G.A.1</div>
+                        <div class="standard-description">Transformations</div>
+                        <ul class="standard-list">
+                            <li>Apply translations: (x,y) → (x+a, y+b)</li>
+                            <li>Perform rotations, reflections, and dilations</li>
+                            <li>Understand how transformations affect coordinates</li>
+                            <li>Connect transformations to real-world applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quarter-section">
+                <div class="quarter-title">
+                    <div class="quarter-number">Q4</div>
+                    Statistics and Review (April - June)
+                </div>
+                
+                <div class="standard-group">
+                    <div class="standard-title">Focus Areas</div>
+                    <div class="standard-content">
+                        <ul class="standard-list">
+                            <li>Statistics and data analysis (non-AR standards)</li>
+                            <li>Comprehensive review of all AR standards</li>
+                            <li>Algebra I preparation activities</li>
+                            <li>Technology integration with algebraic concepts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="indicators-section">
+                <div class="indicator-card ready-card">
+                    <div class="indicator-title">Student Ready for Algebra I</div>
+                    <ul class="standard-list">
+                        <li>Demonstrates fluency with all AR standards</li>
+                        <li>Connects multiple mathematical concepts</li>
+                        <li>Explains mathematical reasoning clearly</li>
+                        <li>Approaches complex problems confidently</li>
+                        <li>Transfers skills to new contexts effectively</li>
+                    </ul>
+                </div>
+
+                <div class="indicator-card support-card">
+                    <div class="indicator-title">Student Needs Additional Support</div>
+                    <ul class="standard-list">
+                        <li>Struggles with basic computational skills</li>
+                        <li>Relies on memorization without understanding</li>
+                        <li>Cannot transfer skills between problem types</li>
+                        <li>Avoids challenging mathematical tasks</li>
+                        <li>Lacks fluency in routine algebraic procedures</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="benchmarks-section">
+                <div class="benchmarks-title">Critical Benchmarks by Quarter End</div>
+                
+                <div class="benchmark-item">
+                    <div class="benchmark-quarter">Quarter 1:</div>
+                    Fluent algebraic manipulation, exponent rules, equation solving, radical operations
+                </div>
+                
+                <div class="benchmark-item">
+                    <div class="benchmark-quarter">Quarter 2:</div>
+                    Complete understanding of linear relationships, functions, systems, and inequalities
+                </div>
+                
+                <div class="benchmark-item">
+                    <div class="benchmark-quarter">Quarter 3:</div>
+                    Coordinate geometry connections, transformation applications
+                </div>
+                
+                <div class="benchmark-item">
+                    <div class="benchmark-quarter">Year End:</div>
+                    Demonstrated readiness for polynomial operations, quadratic functions, and advanced algebraic systems
+                </div>
+            </div>
+        </div>
+
+        <div class="priority-banner">
+            Assessment Priority: Students must achieve mastery of all Algebra Readiness standards before advancing to Algebra I
+        </div>
+
+        <div class="footer">
+            <p>These standards form the foundation for all subsequent high school mathematics courses and require intensive focus throughout the academic year.</p>
+        </div>
+    </div>
+</body>
+</html>
